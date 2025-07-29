@@ -22,18 +22,19 @@ export const sendReminders = serve(async (context) => {
     return;
   }
 
-  for (const daysBefore of REMINDERS) {
-    const reminderDate = renewalDate.subtract(daysBefore, "day");
-    const label = `${daysBefore} days before reminder`; // Consistent label
+for (const daysBefore of REMINDERS) {
+  const reminderDate = renewalDate.subtract(daysBefore, 'day');
 
-    if (reminderDate.isAfter(dayjs())) {
-      await sleepUntilReminder(context, label, reminderDate);
-    }
-
-    if (dayjs().isSame(reminderDate, "day")) {
-      await triggerReminder(context, label, subscription);
-    }
+  if(reminderDate.isAfter(dayjs())) {
+    // Use a unique name for sleepUntil step
+    await sleepUntilReminder(context, `sleep-${daysBefore}-days-before`, reminderDate);
   }
+
+  if (dayjs().isSame(reminderDate, 'day')) {
+    // Use a different name for run step
+    await triggerReminder(context, `trigger-${daysBefore}-days-before`, subscription);
+  }
+}
 });
 
 const fetchSubscription = async (context, subscriptionId) => {
