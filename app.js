@@ -6,7 +6,7 @@ import subscriptionRouter from "./routes/subscription.routes.js";
 import connenctToDatabase from "./database/mongodb.js";
 import errorMiddleware from "./middlewares/error.middleware.js";
 import cookieParser from "cookie-parser";
-import arcjetMiddleware from "./middlewares/arcjet.middleware.js";
+//import arcjetMiddleware from "./middlewares/arcjet.middleware.js";
 import workflowRouter from "./routes/workflow.routes.js";
 
 const app = express();
@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, async () => {
-  console.log(`server is running on http://localhost:${PORT}`);
+  console.log(`server is running on https://subscription-tracker-w8dx.onrender.com`);
   await connenctToDatabase();
 });
 
