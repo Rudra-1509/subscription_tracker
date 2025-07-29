@@ -22,18 +22,20 @@ export const sendReminders = serve(async (context) => {
     return;
   }
 
-  for (const daysBefore of REMINDERS) {
+for (const daysBefore of REMINDERS) {
+  const sleepLabel = `Sleep ${daysBefore} days before reminder`;
+  const runLabel = `${daysBefore} days before reminder`;
   const reminderDate = renewalDate.subtract(daysBefore, 'day');
-  const label = `Reminder ${daysBefore} days before`;
 
   if (reminderDate.isAfter(dayjs())) {
-    await sleepUntilReminder(context, label, reminderDate);
+    await sleepUntilReminder(context, sleepLabel, reminderDate);
   }
 
   if (dayjs().isSame(reminderDate, 'day')) {
-    await triggerReminder(context, label, subscription);
+    await triggerReminder(context, runLabel, subscription);
   }
 }
+
 
 });
 
