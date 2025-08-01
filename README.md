@@ -41,7 +41,7 @@ A robust and efficient backend API for managing and tracking user subscriptions,
 
 ### 📍 Reminder Email Received
 
-![Email](./assets/email-received.png)
+![Email](./assets/email-received.jpg)
 
 ---
 
