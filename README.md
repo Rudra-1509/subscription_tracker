@@ -121,8 +121,8 @@ Body:
 
 | Method | Endpoint             | Description             |
 | ------ | -------------------- | ----------------------- |
-| POST   | `/auth/sign-up`      | Register a new user     |
-| POST   | `/auth/sign-in`      | Log in an existing user |
+| POST   | `/auth/sign-up`      | Sign up a new user      |
+| POST   | `/auth/sign-in`      | Sign in an existing user|
 | GET    | `/subscriptions`     | Get all subscriptions   |
 | POST   | `/subscriptions`     | Add a new subscription  |
 
@@ -131,7 +131,7 @@ Body:
 ##🧭 Roadmap
  --Add frontend dashboard (React/Next.js)
  --Recurring subscription support
- --Category filters & analytics
+ --Category filters and analytics
  --Dark mode UI (if frontend is added)
 
 ---
