@@ -106,7 +106,10 @@ QSTASH_NEXT_SIGNING_KEY=next_signing_key
 Subject: Your Netflix subscription is expiring in 2 days
 
 Body:
-"Hi Rudra, your subscription to Netflix is expiring soon. Renew to avoid service disruption!"
+"Hello Rudra,
+    Your Amazon premium subscription is set to renew on Aug 5, 2025 (7 days from today). If you'd like to make changes or cancel 
+    your subscription, please update the subscription issued.
+"
 
 ##Reminders are sent 7, 5, 2, and 1 day(s) before expiry using Upstash Workflows.
 
